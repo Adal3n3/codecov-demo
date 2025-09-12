@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Squasher Tower Defense</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>🐛 Bug Squasher Tower Defense</h1>
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="label">Health:</span>
+                    <span id="health" class="value">100</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Score:</span>
+                    <span id="score" class="value">0</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Money:</span>
+                    <span id="money" class="value">150</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Wave:</span>
+                    <span id="wave" class="value">1</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-main">
+            <div class="game-area">
+                <canvas id="gameCanvas" width="800" height="600"></canvas>
+                <div class="game-controls">
+                    <button id="startWave" class="btn btn-primary">Start Wave</button>
+                    <button id="pauseGame" class="btn btn-secondary">Pause</button>
+                    <button id="resetGame" class="btn btn-danger">Reset</button>
+                </div>
+            </div>
+
+            <div class="tower-panel">
+                <h3>Defense Towers</h3>
+                <div class="tower-grid">
+                    <div class="tower-card" data-tower="unit-test">
+                        <div class="tower-icon">🧪</div>
+                        <div class="tower-name">Unit Test</div>
+                        <div class="tower-cost">$50</div>
+                        <div class="tower-description">Catches logic bugs early</div>
+                    </div>
+                    
+                    <div class="tower-card" data-tower="code-review">
+                        <div class="tower-icon">👥</div>
+                        <div class="tower-name">Code Review</div>
+                        <div class="tower-cost">$75</div>
+                        <div class="tower-description">Spots human errors</div>
+                    </div>
+                    
+                    <div class="tower-card" data-tower="linter">
+                        <div class="tower-icon">🔍</div>
+                        <div class="tower-name">Linter</div>
+                        <div class="tower-cost">$40</div>
+                        <div class="tower-description">Fast syntax checking</div>
+                    </div>
+                    
+                    <div class="tower-card" data-tower="memory-guard">
+                        <div class="tower-icon">🛡️</div>
+                        <div class="tower-name">Memory Guard</div>
+                        <div class="tower-cost">$100</div>
+                        <div class="tower-description">Prevents memory leaks</div>
+                    </div>
+                </div>
+                
+                <div class="selected-tower-info" id="towerInfo" style="display: none;">
+                    <h4>Tower Info</h4>
+                    <div id="towerDetails"></div>
+                    <button id="upgradeTower" class="btn btn-upgrade">Upgrade ($<span id="upgradePrice">0</span>)</button>
+                    <button id="sellTower" class="btn btn-sell">Sell</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-footer">
+            <div class="instructions">
+                <h4>How to Play:</h4>
+                <p>🎯 Place defense towers to stop bugs from reaching your app!</p>
+                <p>💰 Earn money by defeating bugs to buy more defenses</p>
+                <p>❤️ Don't let too many bugs through or your app will crash!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
